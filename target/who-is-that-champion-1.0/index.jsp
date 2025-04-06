@@ -147,7 +147,7 @@
         <footer>
             <a id="copyright" href="https://github.com/isaquesv" target="_blank">© 2025 <b>isaquesv</b>. Todos os direitos reservados.</a>
             <a id="github-repository-link" href="https://github.com/isaquesv/who-is-that-champion" target="_blank">Repositório GitHub</a>
-            <a id="about-game-link" href="https://github.com/isaquesv/who-is-that-champion/blob/master/README.md" target="_blank">Saiba mais sobre o projeto</a>
+            <a id="about-game-link" href="https://github.com/isaquesv/who-is-that-champion/blob/main/README.md" target="_blank">Saiba mais sobre o projeto</a>
         </footer>
         
         <!-- Botões da direita -->
