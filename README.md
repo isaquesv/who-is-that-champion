@@ -60,12 +60,6 @@ Clone o projeto
   git clone https://github.com/isaquesv/who-is-that-champion.git
 ```
 
-Entre no diretório do projeto
-
-```bash
-  cd who-is-that-champion
-```
-
 Abra o projeto em uma IDE compatível (recomendado: NetBeans 22).
 
 Compile o projeto e execute em um servidor compatível com Jakarta EE 10 (recomendado: Apache Tomcat 10.1.39).
