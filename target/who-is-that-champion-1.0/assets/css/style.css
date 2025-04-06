@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: 'Friz Quadrata', sans-serif;
+    background-color: #030910;
+}
+
+main {
+    width: 700px;
+    margin: 0 auto;
+}
+
+/* Personalizando os scrolls */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: #222;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #888;
+}
+
+/**/
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+}
+@media (max-width: 500px) {
+    main {
+        width: 100%;
+    }
+}

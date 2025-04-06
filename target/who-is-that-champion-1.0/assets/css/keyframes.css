@@ -1,0 +1,91 @@
+/* .correct */
+@keyframes greenGlowChampionSplashArt {
+    0% {
+        box-shadow: none;
+    }
+    50%, 100% {
+        box-shadow: 0 0 1px rgba(144, 238, 144, 0.6), 0 0 10px rgba(72, 255, 72, 0.4);
+    }
+}
+
+@keyframes greenGlowChampionCharacteristic {
+    0%, 100% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 1px rgba(144, 238, 144, 0.6), 0 0 10px rgba(72, 255, 72, 0.4);
+    }
+}
+
+/* .parcial */
+@keyframes yellowGlowChampionCharacteristic {
+    0%, 100% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 1px rgba(217, 127, 17, 0.6), 0 0 5px rgba(217, 127, 17, 0.4);
+    }
+}
+
+/* .incorrect */
+@keyframes redGlowChampionSplashArt {
+    0% {
+        box-shadow: none;
+    }
+    50%, 100% {
+        box-shadow: 0 0 1px rgba(244, 67, 54, 0.6), 0 0 10px rgba(255, 72, 72, 0.4);
+    }
+}
+
+/* Animações */
+@keyframes pulse {
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-2px);
+    }
+    40%, 80% {
+        transform: translateX(2px);
+    }
+}
+@keyframes shakeHover {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-3px);
+    }
+    40%, 80% {
+        transform: translateX(3px);
+    }
+}
+
+/* Mensagens do chat */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

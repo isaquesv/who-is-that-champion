@@ -1,0 +1,160 @@
+.modal.fade .modal-dialog {
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.modal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content {
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 2px solid #CDBE91;
+    border-radius: 12px;
+    background-color: #1D2226;
+}
+
+.modal-header {
+    padding: 0;
+    margin: 0 14px 10px 14px;
+    border-bottom: 0;
+}
+
+.modal-header .btn-close {
+    background-color: #CDBE91;
+    font-size: 20px;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+.modal-header .btn-close:hover {
+    scale: 1.05;
+}
+
+.modal-header h2 {
+    margin: auto;
+    color: #CDBE91;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#language-dropdown-label {
+    width: 100%;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.dropdown-toggle {
+    width: 228px;
+    padding: 8px;
+    margin: 12px 0;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    width: 228px;
+    padding: 0;
+}
+
+.dropdown-menu .dropdown-item:first-of-type {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.dropdown-menu .dropdown-item:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#selected-language-img, .dropdown-item img {
+    height: 30px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.dropdown-item {
+    padding: 8px;
+}
+.dropdown-item.active {
+    cursor: default;
+    color: black;
+    background-color: #C2C2C2;
+}
+.dropdown-item:not(.active) {
+    cursor: pointer;
+}
+.dropdown-item:not(.active):hover {
+    background-color: #DEDEDE;
+}
+
+.modal-body p {
+    color: white;
+    margin: 0;
+}
+
+.modal-body #instruction-paragraph-12, .modal-body #instruction-paragraph-14, .modal-body #instruction-paragraph-16, .modal-body #instruction-paragraph-18, .modal-body #instruction-paragraph-20, .modal-body #instruction-paragraph-21, .modal-body #instruction-paragraph-23, .modal-body #instruction-paragraph-25 {
+    font-style: italic;
+}
+
+/**/
+.modal-body article article {
+    margin-top: 15px;
+}
+
+.modal-body p a {
+    color: #CDBE91;
+}
+
+.modal-body article i {
+    color: white;
+}
+
+.modal-body .current {
+    color: #67BEC8;
+}
+
+.modal-body .correct {
+    color: #4CAF50;
+}
+
+.modal-body .parcial {
+    color: #D97F11;
+}
+
+.modal-body .incorrect {
+    color: #F44336;
+}
+
+.modal-body b, .modal-body span {
+    color: #CDBE91;
+}
+
+.modal-body .dropdown span {
+    color: black;
+}
+
+.modal-body hr {
+    color: white;
+    margin: 30px 0;
+}
+
+.modal-body .champion-characteristic {
+    margin-top: 22px;
+}
+
+.modal-body #language-instructions-phrase-2 {
+    font-style: italic;
+    margin-top: 22px;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 30px 15px;
+    }
+    .btn-close {
+        display: none;
+    }
+}

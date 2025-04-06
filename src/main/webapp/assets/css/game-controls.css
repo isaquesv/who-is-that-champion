@@ -1,0 +1,42 @@
+.game-controls {
+    position: fixed;
+    right: 20px;
+    padding: 6px 12px;
+    border: 2px solid #c89b3c;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    opacity: 0.3;
+    background: linear-gradient(145deg, #1e2328, #3b4652);
+}
+.game-controls:hover {
+    opacity: 1;
+    background: linear-gradient(145deg, #3b4652, #1e2328);
+    transform: scale(1.03);
+}
+
+#show-settings-modal {
+    bottom: 260px;
+}
+
+#show-instructions-modal {
+    bottom: 200px;
+}
+
+#show-or-hide-mysterious-champion-characteristics {
+    bottom: 140px;
+}
+
+#go-to-top {
+    bottom: 80px;
+}
+
+#go-to-champions-characteristics {
+    bottom: 20px;
+}
+
+.game-controls i {
+    font-size: 24px;
+    color: #CDBE91;
+}

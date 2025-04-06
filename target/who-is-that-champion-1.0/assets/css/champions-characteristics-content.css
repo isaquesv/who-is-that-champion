@@ -1,0 +1,192 @@
+#champions-characteristics-content {
+    padding: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #CDBE91;
+    border-radius: 12px;
+    background-color: #1D2226;
+}
+
+#champions-characteristics-content header {
+    margin-bottom: 28px;
+}
+
+#champions-characteristics-content header h2 {
+    text-align: center;
+    font-style: italic;
+    font-size: 28px;
+    color: #CDBE91;
+}
+
+#champions-characteristics-content header h2 b {
+    text-decoration: underline;
+}
+
+/**/
+#mysterious-champion-characteristics {
+    display: none;
+}
+
+.champion-splash-art {
+    height: 320px;
+    align-content: center;
+    text-align: center;
+    font-weight: bolder;
+    color: #AFAFAF;
+    padding: 3px;
+    margin-bottom: 16px;
+    border: 1px solid #5e5c58;
+    background-color: #0D1114;
+}
+
+.champion-splash-art.correct {
+    animation: greenGlowChampionSplashArt 1.5s ease-in;
+    box-shadow: 0 0 1px rgba(144, 238, 144, 0.6), 0 0 10px rgba(72, 255, 72, 0.4);
+}
+
+.champion-splash-art.incorrect {
+    animation: redGlowChampionSplashArt 1.5s ease-in;
+    box-shadow: 0 0 1px rgba(244, 67, 54, 0.6), 0 0 10px rgba(255, 72, 72, 0.4);
+}
+
+.champion-splash-art img {
+    display: none;
+    border: 1px solid #5e5c58;
+    width: 100%;
+    height: 100%;
+}
+
+.champion-splash-art .champion-splash-art-box {
+    font-size: 54px;
+}
+
+/**/
+.champion-characteristics-row {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.champion-characteristic {
+    width: 100%;
+    min-height: 60px;
+    padding: 10px;
+    font-weight: bolder;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #5e5c58;
+    background-color: #0D1114;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.champion-characteristic.current {
+    border: 1px solid #67BEC8;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+.champion-characteristic.correct {
+    border: 1px solid #4CAF50;
+    animation: greenGlowChampionCharacteristic 1.5s ease-in-out;
+}
+.champion-characteristic.correct:hover {
+    box-shadow: 0 0 1px rgba(144, 238, 144, 0.6), 0 0 10px rgba(72, 255, 72, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.champion-characteristic.parcial {
+    border: 1px solid #D97F11;
+    animation: yellowGlowChampionCharacteristic 1.5s ease-in-out;
+}
+.champion-characteristic.parcial:hover {
+    box-shadow: 0 0 1px rgba(217, 127, 17, 0.6), 0 0 5px rgba(217, 127, 17, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.champion-characteristic.incorrect {
+    border: 1px solid #F44336;
+    animation: shake 0.8s ease-in-out;
+}
+.champion-characteristic.incorrect:hover {
+    animation: shakeHover 0.8s ease-in-out;
+}
+
+.champion-characteristic p {
+    font-style: italic;
+    color: #CDBE91;
+    letter-spacing: 1px;
+    margin: auto;
+}
+
+.champion-characteristic.current p {
+    color: #A7D8DB;
+}
+
+.champion-characteristic.correct p {
+    color: #A5D6A7;
+}
+
+.champion-characteristic.parcial p {
+    color: #F5B97F;
+}
+
+.champion-characteristic.incorrect p, .champion-characteristic.incorrect p i {
+    color: #EF9A9A;
+}
+
+/**/
+.champion-gender, .champion-lane, .champion-functions, .champion-resource, .champion-skins-count, .champion-passive-name {
+    margin-right: 1%;
+}
+
+.champion-lane, .champion-region, .champion-functions, .champion-range-type, .champion-release-year, .champion-ultimate-name {
+    margin-left: 1%;
+}
+
+/**/
+#play-again {
+    display: none;
+    width: 100%;
+    color: #CDBE91;
+    margin-top: 12px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    border: 2px solid #665F48;
+    border-radius: 4px;
+    background-color: #0D1114;
+    transition: all 0.3s ease-in-out;
+    animation: pulse 2.5s infinite;
+}
+
+#play-again:hover {
+    background: linear-gradient(145deg, #191e23, #2c323a);
+    animation: pulse 2.5s infinite;
+}
+
+/**/
+@media (max-width: 600px) {
+    #champions-characteristics-content {
+        padding: 30px;
+    }
+}
+@media (max-width: 500px) {
+    #champions-characteristics-content {
+        padding: 30px 20px 20px 20px;
+    }
+}
+@media (max-width: 425px) {
+    .champion-characteristics-row {
+        display: block;
+    }
+    
+    .champion-gender, .champion-lane, .champion-functions, .champion-resource, .champion-skins-count, .champion-passive-name, .champion-region, .champion-range-type, .champion-release-year, .champion-ultimate-name {
+        margin: 0;
+    }
+    .champion-characteristic:not(.champion-ultimate-name) {
+        margin-bottom: 5px;
+    }
+}

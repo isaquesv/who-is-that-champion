@@ -1,0 +1,28 @@
+/* Personalizando a navbar */
+nav {
+    display: flex;
+    width: 700px;
+    margin: 30px auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+nav h1 {
+    color: #CDBE91;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+/**/
+@media (max-width: 768px) {
+    nav {
+        width: 90%;
+    }
+}
+@media (max-width: 500px) {
+    nav {
+        width: 98%;
+    }
+}
