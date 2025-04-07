@@ -44,9 +44,9 @@ Cada rodada revela uma nova característica dos campeões. Essas característica
 
 ## Stack utilizada
 
-**Front-end:** HTML, CSS, Bootstrap e JavaScript.
+**Frontend:** HTML, CSS, Bootstrap e JavaScript.
 
-**Back-end:** Java (com Maven) e SQL.
+**Backend:** Java (com Maven) e SQL.
 
 **Servidor:** Apache Tomcat 10.1.39.
 
