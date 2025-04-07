@@ -7,11 +7,9 @@ Descubra quem é o campeão misterioso de **League of Legends**. Este projeto é
 
 Confira o jogo em funcionamento no vídeo abaixo:
 
-
-
 https://github.com/user-attachments/assets/7fd00502-c88f-495a-9e6a-dfac337ad37e
 
-
+👉 Outra demonstração no YouTube: https://www.youtube.com/watch?v=_dQ0O7f3Ka4
 
 ## Como funciona o jogo
 
