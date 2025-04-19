@@ -22,7 +22,7 @@ Caso não acerte, você continuará tentando até a última rodada.
 
 Cada rodada revela uma nova característica dos campeões. Essas características são exibidas em retângulos coloridos, com as seguintes interpretações:
 
-| **Cor**               | **Descrição**                                                |
+| **Indicadores**               | **Descrição**                                                |
 | ----------------- | ---------------------------------------------------------------- |
 | Azul       | característica analisada na rodada atual. |
 | Verde      | característica idêntica à do campeão misterioso. |
@@ -44,17 +44,20 @@ Cada rodada revela uma nova característica dos campeões. Essas característica
 
 ## Stack utilizada
 
-**Frontend:** HTML, CSS, Bootstrap e JavaScript.
+### **Frontend:** HTML, CSS, Bootstrap e JavaScript.
+[![My Skills](https://skillicons.dev/icons?i=html,css,bootstrap,js)](https://skillicons.dev)
 
-**Backend:** Java (com Maven) e SQL.
+### **Backend e Banco de dados:** Java (com Maven) e SQLite.  
+[![My Skills](https://skillicons.dev/icons?i=java,maven,sqlite)](https://skillicons.dev)
 
-**Servidor:** Apache Tomcat 10.1.39.
+### **Servidor:** Apache Tomcat 10.1.39.  
+<img src="https://img.shields.io/badge/Apache%20Tomcat-F8DC75.svg?style=for-the-badge&logo=Apache-Tomcat&logoColor=black">
 
-**Database:** SQLite JDBC.
+### **JDK:** 19.0.2.  
+<img src="https://img.shields.io/badge/OpenJDK-000000.svg?style=for-the-badge&logo=OpenJDK&logoColor=white">
 
-**JDK:** 19.0.2.
-
-**APIs:** DataDragon (Riot Games) e LoLdleData (Kerrders), para capturar as informações dos campeões.
+### **APIs:** DataDragon (Riot Games) e LoLdleData (Kerrders), para capturar as informações dos campeões.  
+<img src="https://img.shields.io/badge/League%20of%20Legends-C28F2C.svg?style=for-the-badge&logo=League-of-Legends&logoColor=white">
 
 ## Rodando localmente
 
