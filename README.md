@@ -58,7 +58,7 @@ Cada rodada revela uma nova característica dos campeões. Essas característica
 - Comparação rodada a rodada das características entre o campeão escolhido e o campeão misterioso.
 - Sistema de cores e setas para indicar o nível de correspondência das características.
 - Reinício manual da partida após o término do jogo.
-- Armazenamento local das informações dos campeões usando SQLite.
+- Armazenamento local das informações dos campeões usando *SQLite*.
 - Feedback visual ao longo da partida (vitória, derrota e progresso das rodadas).
 
 ---
