@@ -66,7 +66,7 @@ Cada rodada revela uma nova característica dos campeões. Essas característica
 ### **JDK:** 19.0.2.  
 <img src="https://img.shields.io/badge/OpenJDK-000000.svg?style=for-the-badge&logo=OpenJDK&logoColor=white">
 
-### **APIs:** *WhoIsThatChampionData* para capturar as informações dos campeões.  
+### **APIs:** *Who Is That Champion Data API* para capturar as informações dos campeões.  
 <img src="https://img.shields.io/badge/League%20of%20Legends-C28F2C.svg?style=for-the-badge&logo=League-of-Legends&logoColor=white">
 
 ---
@@ -90,7 +90,7 @@ Compile o projeto e execute em um servidor compatível com Jakarta EE 10 (recome
 - **Otimização do tempo de espera para inicialização do jogo:**  
   Antes, o projeto consultava diretamente as APIs do **Data Dragon** e do **Kerrders LoLdleData**, o que tornava o carregamento inicial lento — cerca de 5 minutos sempre que o sistema era iniciado ou detectava uma nova versão da API **Data Dragon**.
 
-  Para resolver isso, desenvolvi a *[WhoIsThatChampionData API](https://github.com/isaquesv/who-is-that-champion-data-api)* em Node.js, que integra apenas os dados necessários das APIs **Data Dragon**, **Kerrders LoLdleData** e **Universe Meeps LoL**.
+  Para resolver isso, desenvolvi a *[Who Is That Champion Data API](https://github.com/isaquesv/who-is-that-champion-data-api)* em Node.js, que integra apenas os dados necessários das APIs **Data Dragon**, **Kerrders LoLdleData** e **Universe Meeps LoL**.
 
   Com essa otimização, o tempo de carregamento foi reduzido para menos de 1 minuto, proporcionando uma experiência muito mais rápida e fluida para o usuário.
 
@@ -127,7 +127,7 @@ Para suporte, caso você encontre algum problema, tenha sugestões de melhorias 
 ## Referência
 
  - [League of Legends](https://www.leagueoflegends.com/)
- - [WhoIsThatChampionData API](https://github.com/isaquesv/who-is-that-champion-data-api)
+ - [Who Is That Champion Data API](https://github.com/isaquesv/who-is-that-champion-data-api)
  - [DataDragon API](https://developer.riotgames.com/docs/lol)
  - [LoLdleData API](https://github.com/Kerrders/LoLdleData)
  - [LoLdle](https://loldle.net)
