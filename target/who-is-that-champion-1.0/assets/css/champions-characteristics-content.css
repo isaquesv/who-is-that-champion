@@ -175,10 +175,11 @@
 }
 @media (max-width: 500px) {
     #champions-characteristics-content {
-        padding: 30px 20px 20px 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 30px 13px 20px 13px;
     }
-}
-@media (max-width: 425px) {
+    
     .champion-characteristics-row {
         display: block;
     }
@@ -188,5 +189,11 @@
     }
     .champion-characteristic:not(.champion-ultimate-name) {
         margin-bottom: 5px;
+    }
+}
+@media (max-width: 320px) {
+    #champions-characteristics-content {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

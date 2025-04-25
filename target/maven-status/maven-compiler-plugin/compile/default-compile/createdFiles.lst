@@ -1,15 +1,14 @@
 isaquesv\who\is\that\champion\JakartaRestConfiguration.class
+apis\WhoIsThatChampionData.class
 utils\SelfCertificatedServer$1.class
 servlets\UpdateGameLanguageServlet.class
-utils\TextManipulation.class
-apis\DataDragon.class
 servlets\PrepareGameServlet.class
 database\DataDragonVersions.class
 isaquesv\who\is\that\champion\resources\JakartaEE10Resource.class
+apis\DataDragonVersion.class
 servlets\CompareCharacteristicsServlet.class
 servlets\PlayAgainServlet.class
 database\DBConnection.class
 utils\GameSession.class
 utils\SelfCertificatedServer.class
-apis\KerrdersLoLdleData.class
 database\Champions.class

@@ -1,6 +1,7 @@
 package servlets;
 
-import apis.DataDragon;
+import apis.DataDragonVersion;
+import apis.WhoIsThatChampionData;
 import database.Champions;
 import database.DataDragonVersions;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class PrepareGameServlet extends HttpServlet {
         try {
             if (language != null && !language.trim().isEmpty()) {
                 // Capturando a versão mais atual da API Data Dragon
-                String dataDragonLatestVersion = DataDragon.getLatestVersion();
+                String dataDragonLatestVersion = DataDragonVersion.getLatestVersion();
 
                 if (!dataDragonLatestVersion.trim().isEmpty()) {
                     Champions.createTable();
@@ -48,7 +49,7 @@ public class PrepareGameServlet extends HttpServlet {
                     int dataDragonLatestVersionEnUSId = DataDragonVersions.getVersionId(dataDragonLatestVersion, "en_US");
 
                     // Caso não estejam registradas no banco, cadastra esta versão no banco de dados com os 3 idiomas suportados pelo jogo
-                    if (dataDragonLatestVersionPtBRId == 0 && dataDragonLatestVersionEsESId == 0 && dataDragonLatestVersionEnUSId == 0) {
+                    if (dataDragonLatestVersionPtBRId == 0 || dataDragonLatestVersionEsESId == 0 || dataDragonLatestVersionEnUSId == 0) {
                         DataDragonVersions.deleteOldVersions(dataDragonLatestVersion);
 
                         dataDragonLatestVersionPtBRId = DataDragonVersions.addVersion(dataDragonLatestVersion, "pt_BR");
@@ -67,19 +68,16 @@ public class PrepareGameServlet extends HttpServlet {
                         
                         // Caso os campeões não estejam registrados no banco, cadastra eles no banco de dados com os 3 idiomas suportados pelo jogo
                         if (championsDataPtBR.length() == 0 && championsDataEsES.length() == 0 && championsDataEnUS.length() == 0) {
-                            championsDataPtBR = DataDragon.getAllChampionsData(dataDragonLatestVersion, dataDragonLatestVersionPtBRId, "pt_BR");
-                            championsDataPtBR = getSortedChampionsData(championsDataPtBR);
-
-                            championsDataEsES = DataDragon.getAllChampionsData(dataDragonLatestVersion, dataDragonLatestVersionEsESId, "es_ES");
-                            championsDataEsES = getSortedChampionsData(championsDataEsES);
-
-                            championsDataEnUS = DataDragon.getAllChampionsData(dataDragonLatestVersion, dataDragonLatestVersionEnUSId, "en_US");
-                            championsDataEnUS = getSortedChampionsData(championsDataEnUS);
-
+                            JSONObject championsInAllLanguages = WhoIsThatChampionData.getAllChampionsData();
+                            
+                            championsDataPtBR = championsInAllLanguages.getJSONArray("pt_br");
+                            championsDataEsES = championsInAllLanguages.getJSONArray("es_es");
+                            championsDataEnUS = championsInAllLanguages.getJSONArray("en_us");
+                            
                             // Registrando cada campeão
-                            registerChampions(championsDataPtBR);
-                            registerChampions(championsDataEsES);
-                            registerChampions(championsDataEnUS);
+                            registerChampions(championsDataPtBR, dataDragonLatestVersionPtBRId);
+                            registerChampions(championsDataEsES, dataDragonLatestVersionEsESId);
+                            registerChampions(championsDataEnUS, dataDragonLatestVersionEnUSId);
                         }
 
                         HttpSession gameSession;
@@ -154,20 +152,19 @@ public class PrepareGameServlet extends HttpServlet {
                             JSONArray championsDataPtBR = Champions.getAllChampions(dataDragonLatestVersionPtBRId, "pt_BR");
                             JSONArray championsDataEsES = Champions.getAllChampions(dataDragonLatestVersionEsESId, "es_ES");
                             JSONArray championsDataEnUS = Champions.getAllChampions(dataDragonLatestVersionEnUSId, "en_US");
-                            
+
+                            // Caso os campeões não estejam registrados no banco, cadastra eles no banco de dados com os 3 idiomas suportados pelo jogo
                             if (championsDataPtBR.length() == 0 && championsDataEsES.length() == 0 && championsDataEnUS.length() == 0) {
-                                championsDataPtBR = DataDragon.getAllChampionsData(dataDragonLatestVersion, dataDragonLatestVersionPtBRId, "pt_BR");
-                                championsDataPtBR = getSortedChampionsData(championsDataPtBR);
-
-                                championsDataEsES = DataDragon.getAllChampionsData(dataDragonLatestVersion, dataDragonLatestVersionEsESId, "es_ES");
-                                championsDataEsES = getSortedChampionsData(championsDataEsES);
-
-                                championsDataEnUS = DataDragon.getAllChampionsData(dataDragonLatestVersion, dataDragonLatestVersionEnUSId, "en_US");
-                                championsDataEnUS = getSortedChampionsData(championsDataEnUS);
-
-                                registerChampions(championsDataPtBR);
-                                registerChampions(championsDataEsES);
-                                registerChampions(championsDataEnUS);
+                                JSONObject championsInAllLanguages = WhoIsThatChampionData.getAllChampionsData();
+                                
+                                championsDataPtBR = championsInAllLanguages.getJSONArray("pt_br");
+                                championsDataEsES = championsInAllLanguages.getJSONArray("es_es");
+                                championsDataEnUS = championsInAllLanguages.getJSONArray("en_us");
+                                
+                                // Registrando cada campeão
+                                registerChampions(championsDataPtBR, dataDragonLatestVersionPtBRId);
+                                registerChampions(championsDataEsES, dataDragonLatestVersionEsESId);
+                                registerChampions(championsDataEnUS, dataDragonLatestVersionEnUSId);
                             }
 
                             HttpSession gameSession;
@@ -260,34 +257,19 @@ public class PrepareGameServlet extends HttpServlet {
     }
 
     /**
-     * Retorna a lista de campeões ordenada alfabeticamente com base na "key" de
-     * cada campeão
-     */
-    public static JSONArray getSortedChampionsData(JSONArray championsData) {
-        // Ordenando os campeões com base em suas "key".
-        List<JSONObject> sortedList = championsData.toList().stream()
-                .map(obj -> new JSONObject((java.util.Map<?, ?>) obj))
-                .sorted((o1, o2) -> o1.getString("key").compareTo(o2.getString("key")))
-                .collect(Collectors.toList());
-
-        championsData = new JSONArray(sortedList);
-        return championsData;
-    }
-
-    /**
      * Registra todos os campeões recebidos no banco de dados, caso ainda não
      * estejam cadastrados
      */
-    public static void registerChampions(JSONArray championsData) {
+    public static void registerChampions(JSONArray championsData, int dataDragonLatestVersionId) {
         if (championsData.isEmpty()) {
             return;
         }
 
-        String registerChampionsLogs = "Cadastro de campeões: " + championsData.getJSONObject(0).getInt("version_id") + " -";
+        String registerChampionsLogs = "Cadastro de campeões: " + dataDragonLatestVersionId + " -";
         
         for (int i = 0; i < championsData.length(); i++) {
             JSONObject championData = championsData.getJSONObject(i);
-            boolean isChampionRegistred = Champions.addChampion(championData);
+            boolean isChampionRegistred = Champions.addChampion(championData, dataDragonLatestVersionId);
             
             registerChampionsLogs += " " + championData.getString("key") + "-" + isChampionRegistred;
         }
@@ -427,22 +409,6 @@ public class PrepareGameServlet extends HttpServlet {
         }
 
         return championsBasicInfo;
-    }
-
-    /**
-     * Retorna todas as chaves dos campeões presentes na lista de campeões
-     */
-    public static ArrayList<String> getChampionsKeys(JSONArray championsData) {
-        ArrayList<String> championsKeys = new ArrayList<>();
-
-        for (int i = 0; i < championsData.length(); i++) {
-            JSONObject championData = championsData.getJSONObject(i);
-            String championKey = championData.getString("key");
-
-            championsKeys.add(championKey);
-        }
-
-        return championsKeys;
     }
 
     @Override

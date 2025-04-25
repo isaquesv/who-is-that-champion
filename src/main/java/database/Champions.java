@@ -46,7 +46,7 @@ public class Champions {
     /**
      * Adiciona um registro na tabela "champions"
      */
-    public static boolean addChampion(JSONObject champion) {
+    public static boolean addChampion(JSONObject champion, int versionId) {
         boolean isChampionRegistred = false;
 
         try {
@@ -70,7 +70,7 @@ public class Champions {
             pStmt.setString(13, champion.getString("ultimate_name"));
             pStmt.setString(14, champion.getString("icon_path"));
             pStmt.setString(15, champion.getString("splash_art_path"));
-            pStmt.setInt(16, champion.getInt("version_id"));
+            pStmt.setInt(16, versionId);
 
             int result = pStmt.executeUpdate();
             if (result == 1) {
