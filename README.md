@@ -120,7 +120,7 @@ Para suporte, caso você encontre algum problema, tenha sugestões de melhorias 
 ## Referência
 
 - *[League of Legends (Riot Games)](https://www.leagueoflegends.com/)*
-- *[Who Is That Champion? (isaquesv)](https://github.com/isaquesv/who-is-that-champion)*
+- *[Who Is That Champion Data API (isaquesv)](https://github.com/isaquesv/who-is-that-champion)*
 - *[Data Dragon (Riot Games)](https://developer.riotgames.com/docs/lol)*
 - *[LoLdle Data (Kerrders)](https://github.com/Kerrders/LoLdleData)*
 - *Universe Meeps LoL*
