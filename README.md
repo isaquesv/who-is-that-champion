@@ -6,7 +6,7 @@ Descubra quem é o campeão misterioso de *League of Legends*. Este projeto é u
 
 ## Demonstração do jogo
 
-![exemplo de partida](https://github.com/isaquesv/who-is-that-champion/blob/main/src/main/webapp/assets/img/who-is-that-champion.png)
+![exemplo de partida](https://github.com/isaquesv/who-is-that-champion/blob/main/src/main/webapp/assets/img/who_is_that_champion.png)
 
 👉 Outro vídeo de demonstração mais detalhado no YouTube: *https://www.youtube.com/watch?v=_dQ0O7f3Ka4*
 
